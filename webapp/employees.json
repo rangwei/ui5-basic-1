@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Bilbo Baggins",
+        "salary": 1000,
+        "department": null
+    },
+    {
+        "id": 2,
+        "name": "Frodo Baggins",
+        "salary": 2000,
+        "department": null
+    },
+    {
+        "id": 4,
+        "name": "abc",
+        "salary": 3000,
+        "department": {
+            "id": 3,
+            "name": "dddd"
+        }
+    }
+]

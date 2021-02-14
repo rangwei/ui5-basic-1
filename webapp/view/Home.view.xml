@@ -1,0 +1,93 @@
+<mvc:View controllerName="sap.ui.demo.basicTemplate.controller.Home" displayBlock="true"
+	xmlns="sap.m"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc">
+
+
+	<VBox class="sapUiSmallMargin">
+
+		<Panel>
+			<content>
+				<Button text="hello" press=".onShowHello"/>
+				<Input value="{/recipient/name}" valueLiveUpdate="true" width="60%" />
+				<List headerText="{i18n>Employees}" class="sapUiResponsiveMargin" width="auto" items="{employee>/}">
+					<items>
+						<ObjectListItem title="{employee>name}" number="{
+                            parts: [{path: 'employee>salary'}, 'CNY'],
+                            type: 'sap.ui.model.type.Currency',
+                            formatOptions: {
+                            showMeasure: false
+                        }
+                    }" numberUnit="CNY" type="Navigation" press="onPress"/>
+					</items>
+				</List>
+			</content>
+		</Panel>
+
+		<f:Form id="FormDisplay471" editable="false">
+			<f:title>
+				<core:Title text="Employee Detail" />
+			</f:title>
+			<f:layout>
+				<f:ResponsiveGridLayout labelSpanXL="4" labelSpanL="4" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="1" emptySpanL="1" emptySpanM="1" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1" singleContainerFullSize="false" />
+			</f:layout>
+			<f:FormContainer id="employeeForm" visible="true">
+				<f:formElements>
+					<f:FormElement visible="true">
+						<f:label>
+							<Label text="ID" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:label>
+						<f:fields>
+							<Text text="{employee>id}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement visible="true">
+						<f:label>
+							<Label text="Name" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:label>
+						<f:fields>
+							<Text text="{employee>name}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement visible="true">
+						<f:label>
+							<Label text="Salary" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:label>
+						<f:fields>
+							<Text text="{employee>salary}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement visible="true">
+						<f:label>
+							<Label text="Position" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:label>
+						<f:fields>
+							<Text text="{Position}" width="auto" maxLines="1" wrapping="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement visible="true">
+						<f:label>
+							<Label text="Evaluation" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:label>
+						<f:fields>
+							<Input value="" type="Text" showValueHelp="false" enabled="true" visible="true" width="auto" valueHelpOnly="false" required="false" valueStateText="Invalid entry" maxLength="0"/>
+						</f:fields>
+					</f:FormElement>
+					<f:FormElement visible="true">
+						<f:label>
+							<Label text="Date" design="Standard" width="100%" required="false" textAlign="Begin" textDirection="Inherit" visible="true"/>
+						</f:label>
+						<f:fields>
+							<DatePicker width="auto" displayFormat="medium" required="false" valueStateText="Invalid entry" enabled="true" visible="true" valueFormat="yyyyMMdd"/>
+						</f:fields>
+					</f:FormElement>
+				</f:formElements>
+				<f:title/>
+			</f:FormContainer>
+		</f:Form>
+
+
+	</VBox>
+</mvc:View>
